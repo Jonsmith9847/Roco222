@@ -1,11 +1,14 @@
-# My first Markdown document
+# ROCO_222 Logbook by Jonathan Smith
+
+This logbook is intended to be a record of all the work completed during the practical  
+sessions for the ROCO_222 module.
+
+## My first Markdown document
 
 This is my first document written using the markdown syntax.  
 Markdown is a markup language that is designed to be easily converted  
 to HTML. Markdown is commonly used to format readme files and create rich  
-text using a plain text editor. Syntax examples inliude a horizontal line as shown below.  
-
----
+text using a plain text editor. Syntax examples are shown below.  
 
 Using asterisks a bulletpointed list can be produced.  
 * Sample Text A
@@ -29,6 +32,8 @@ I can also use markup to make links. An example link to my reference
 material is produced below.
 
 Daring Fireball [link](https://daringfireball.net/projects/markdown/)
+
+Using a triple dash a complete line added.
 
 ---
 
