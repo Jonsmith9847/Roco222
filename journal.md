@@ -3,7 +3,8 @@
 This is my first document written using the markdown syntax.  
 Markdown is a markup language that is designed to be easily converted  
 to HTML. Markdown is commonly used to format readme files and create rich  
-text using a plain text editor. Syntax examples inliude a horizontal line as shown below.
+text using a plain text editor. Syntax examples inliude a horizontal line as shown below.  
+
 ---
 
 Using asterisks a bulletpointed list can be produced.  
@@ -123,4 +124,6 @@ jonny@jonny-Lenovo-Yoga-3-14:~/roco222$
 Using the command 'git commit -m"Created Journal" I produced a new commit containing my Journal.  
 I can check my work using the 'git log' command to show the recent changes.  
 
+
+Test  
 
