@@ -107,19 +107,20 @@ drwxr-xr-x 30 jonny jonny 4096 Sep 25 09:47 ..
 drwxrwxr-x  7 jonny jonny 4096 Sep 25 09:56 .git  
 drwxrwxr-x  3 jonny jonny 4096 Sep 25 09:43 jonny  
 
-I then associated the repository with my github account:
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ git config  --global user.name "Jonathan Smith"
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ git config --global  user.email jonathan.smith@students.plymouth.ac.uk
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ cat ~/.gitconfig [user]
-	name = Jonathan Smith
-	email = jonathan.smith@students.plymouth.ac.uk
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ 
-
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ git config --global  user.email jonathan.smith@students.plymouth.ac.uk
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ cat ~/.gitconfig [user]
-	name = Jonathan Smith
-	email = jonathan.smith@students.plymouth.ac.uk
-jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ 
+I then associated the repository with my github account:  
+jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ git config  --global user.name "Jonathan Smith"  
+jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ git config --global  user.email jonathan.smith@students.plymouth.ac.uk  
+jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ cat ~/.gitconfig [user]  
+	name = Jonathan Smith  
+	email = jonathan.smith@students.plymouth.ac.uk  
+jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ git config --global  user.email jonathan.smith@students.plymouth.ac.uk  
+jonny@jonny-Lenovo-Yoga-3-14:~/roco222$ cat ~/.gitconfig [user]  
+	name = Jonathan Smith  
+	email = jonathan.smith@students.plymouth.ac.uk  
+jonny@jonny-Lenovo-Yoga-3-14:~/roco222$   
 
 ## My first commit
+Using the command 'git commit -m"Created Journal" I produced a new commit containing my Journal.  
+I can check my work using the 'git log' command to show the recent changes.  
+
 
