@@ -132,3 +132,15 @@ I can check my work using the 'git log' command to show the recent changes.
 
 Test  
 
+---
+ 
+### Installing the Ardunio IDE
+'27-9-17'
+
+The Ardunio IDE will be used later on during labs to program the Ardunio microcontrollers.  
+Therefore I decided to install the Ardunio IDE using the terminal.  
+
+Using the command: sudo apt install arduino  
+The installer quickly performed the install and I was able to launch the ardunio IDE.  
+![Figure 1-1]( https://github.com/Jonsmith9847/roco222/blob/master/photos/ArduinoIDE.png  "Figure 1-1")
+
