@@ -140,7 +140,7 @@ Using the command 'git commit -m"Created Journal" I produced a new commit contai
 I can check my work using the 'git log' command to show the recent changes.  
 
 Then using the 'git push' command I can upload the new version to GitHub. Shown below is a screenshot of the online repository:  
-![Figure 1-1]( hhttps://github.com/Jonsmith9847/roco222/blob/master/photos/GitHub.png  "Figure 1-1")
+![Figure 1-1]( hhttps://github.com/Jonsmith9847/roco222/blob/master/photos/GitHub.png )
 
 ---
  
@@ -152,5 +152,5 @@ Therefore I decided to install the Ardunio IDE using the terminal.
 
 Using the command: sudo apt install arduino  
 The installer quickly performed the install and I was able to launch the ardunio IDE.  
-![Figure 2-2]( https://github.com/Jonsmith9847/roco222/blob/master/photos/ArduinoIDE.png  "Figure 2-2")
+![Figure 2-2]( https://github.com/Jonsmith9847/roco222/blob/master/photos/ArduinoIDE.png )
 
