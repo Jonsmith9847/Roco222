@@ -73,7 +73,19 @@ Cat (concatenate) is used to read the contents of a file. Using cat hello.md
 reads back the file created using the previous command "echo "Hello" > hello.md"  
 
 ### cp hello.md hello-again.md
-cp or copy files is used to make a new
+cp or copy files is used to make a new copy of an existing file. It is important to name the new copy with a unique file name that is different from the original.
+
+### rm hello.md
+The rm command is used to remove files or directories. In this example the command removes the file called   hello.md from the current directory.  
+
+### rm -rf
+This is a more dangerous version of the rm command that has two modifiers. The r means that the remove command   will run recursively removing the files and sub directorys in the file structre. The f means that the remove   command will force files to be deleated even if they cause errors. For example if a file is open in a program   using the force command the file can be deleted.  
+
+### cat /proc/cpuinfo
+The cat command is used to show files on the terminal which is refered to as the "standard output".  
+THe command references a virtual file called cpuinfo.
+
+The proc file system contains special virtual files that represent the current state of the kernal. The proc file system can be used to view important infromation about system hardware and processes. In this instance the cpuinfo file provides upto date infromation about the CPU.  
 
 ### sudo
 sudo is allows the command to run regardless of admin or safegaurds. **Use with caution**
@@ -88,17 +100,15 @@ Using the 'htop' command I can view the cpu usage and close down problem causing
 ---
 
 ### Making directory/file structures for roco222
-I made my file structre as so:
-$home
-ls
-mkdir roco222
-cd roco222
-mkdir jonny
-cd jonny
-mkdir lab-journal
-$home 
-cp journal.md journal_copy.md
-mv
+I made my file structre as so:  
+$home  
+ls  
+mkdir roco222  
+cd roco222  
+mkdir jonny  
+cd jonny  
+mkdir lab-journal  
+$home   
 
 ---
 
@@ -129,8 +139,8 @@ jonny@jonny-Lenovo-Yoga-3-14:~/roco222$
 Using the command 'git commit -m"Created Journal" I produced a new commit containing my Journal.  
 I can check my work using the 'git log' command to show the recent changes.  
 
-
-Test  
+Then using the 'git push' command I can upload the new version to GitHub. Shown below is a screenshot of the online repository:  
+![Figure 1-1]( hhttps://github.com/Jonsmith9847/roco222/blob/master/photos/GitHub.png  "Figure 1-1")
 
 ---
  
