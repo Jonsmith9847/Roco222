@@ -152,5 +152,5 @@ Therefore I decided to install the Ardunio IDE using the terminal.
 
 Using the command: sudo apt install arduino  
 The installer quickly performed the install and I was able to launch the ardunio IDE.  
-![Figure 1-1]( https://github.com/Jonsmith9847/roco222/blob/master/photos/ArduinoIDE.png  "Figure 1-1")
+![Figure 1-2]( https://github.com/Jonsmith9847/roco222/blob/master/photos/ArduinoIDE.png  "Figure 1-2")
 
