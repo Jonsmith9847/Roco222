@@ -154,3 +154,31 @@ Using the command: sudo apt install arduino
 The installer quickly performed the install and I was able to launch the ardunio IDE.  
 ![Figure 2-2]( https://github.com/Jonsmith9847/roco222/blob/master/photos/ArduinoIDE.png )
 
+---
+### Hack into a robot
+The task involves connecting to a Nao robot using ssh and bash.  
+
+Firstly I found the IP address of the Nao using the ping command.  
+ping chapman.local  
+This provied an IP address for the Nao robot.  
+In this case the IP address was 192.168.0.184.  
+
+The I used SSH to connect to the robot. The comman used was ssh nao@192.168.0.184.  
+The console then asked for a password. I used the default password nao and was able to gain access.  
+
+Using the nano editor I made a new python script file called Hacked.py that contained the pyhton code  
+required to make nao speak.  
+
+A sample of the code used to make Nao speak:
+'''
+from naoqi import ALProxy
+tts = ALProxy("ALTextToSpeech", "localhost", 9559)
+tts.say("I've hacked you, robot!")
+
+'''
+
+
+I then used the command python Hacked.py to run the python script and make noa speak.  
+
+---
+
