@@ -140,7 +140,7 @@ Using the command 'git commit -m"Created Journal" I produced a new commit contai
 I can check my work using the 'git log' command to show the recent changes.  
 
 Then using the 'git push' command I can upload the new version to GitHub. Shown below is a screenshot of the online repository:  
-![Figure 1-1]( hhttps://github.com/Jonsmith9847/roco222/blob/master/photos/GitHub.png )
+![Figure 1-1](  roco222/photos/GitHub.png  )
 
 ---
  
