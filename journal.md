@@ -169,13 +169,14 @@ The console then asked for a password. I used the default password nao and was a
 Using the nano editor I made a new python script file called Hacked.py that contained the pyhton code  
 required to make nao speak.  
 
-A sample of the code used to make Nao speak:
-'''
+A sample of the code used to make Nao speak:  
+
+```
 from naoqi import ALProxy
 tts = ALProxy("ALTextToSpeech", "localhost", 9559)
 tts.say("I've hacked you, robot!")
 
-'''
+```
 
 
 I then used the command python Hacked.py to run the python script and make noa speak.  
