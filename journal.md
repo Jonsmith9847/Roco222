@@ -79,13 +79,16 @@ cp or copy files is used to make a new copy of an existing file. It is important
 The rm command is used to remove files or directories. In this example the command removes the file called   hello.md from the current directory.  
 
 ### rm -rf
-This is a more dangerous version of the rm command that has two modifiers. The r means that the remove command   will run recursively removing the files and sub directorys in the file structre. The f means that the remove   command will force files to be deleated even if they cause errors. For example if a file is open in a program   using the force command the file can be deleted.  
+This is a more dangerous version of the rm command that has two modifiers. The r means that the remove command   will run   
+recursively removing the files and sub directorys in the file structre. The f means that the remove   command will force files to be deleated even if they cause errors.  
+ For example if a file is open in a program   using the force command the file can be deleted.  
 
 ### cat /proc/cpuinfo
 The cat command is used to show files on the terminal which is refered to as the "standard output".  
 THe command references a virtual file called cpuinfo.
 
-The proc file system contains special virtual files that represent the current state of the kernal. The proc file system can be used to view important infromation about system hardware and processes. In this instance the cpuinfo file provides upto date infromation about the CPU.  
+The proc file system contains special virtual files that represent the current state of the kernal. The proc file system can be used   
+to view important infromation about system hardware and processes. In this instance the cpuinfo file provides upto date infromation about the CPU.  
 
 ### sudo
 sudo is allows the command to run regardless of admin or safegaurds. **Use with caution**
@@ -178,8 +181,20 @@ tts.say("I've hacked you, robot!")
 
 ```
 
-
 I then used the command python Hacked.py to run the python script and make noa speak.  
 
 ---
+
+## Building a DC motor
+
+The task requires that we construct a basic dc motor. We are provided with basic components that can be used  
+to assemble a rudimentary motor.
+
+### Building the Commutator:
+
+The commutator is a device that is designed to reverse the direction of current flow when the armature is inline   with the magnetic feild.
+This enables the motor to turn a full 360 degrees. Without a commutator the armature will simply move to line up   with the feild and stay in that postion.
+
+Shown below is the constructed commutator:
+![Figure 3-3]( https://github.com/Jonsmith9847/roco222/blob/master/photos/Commutator.jpg )
 
