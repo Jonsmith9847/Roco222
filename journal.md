@@ -198,3 +198,5 @@ This enables the motor to turn a full 360 degrees. Without a commutator the arma
 Shown below is the constructed commutator:  
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Commutator.jpg" width="400" height="500" />
 
+We used copper tape wraped around the cork to make electrical connections. The brushes will then be able to   connect to the communtator and switch the direction as the commutator rotates.  
+
