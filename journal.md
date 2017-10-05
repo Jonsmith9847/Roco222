@@ -195,6 +195,6 @@ to assemble a rudimentary motor.
 The commutator is a device that is designed to reverse the direction of current flow when the armature is inline   with the magnetic feild.
 This enables the motor to turn a full 360 degrees. Without a commutator the armature will simply move to line up   with the feild and stay in that postion.
 
-Shown below is the constructed commutator:
-<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Commutator.jpg" width="200" height="500" />
+Shown below is the constructed commutator:  
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Commutator.jpg" width="400" height="500" />
 
