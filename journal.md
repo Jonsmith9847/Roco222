@@ -211,4 +211,5 @@ I used sand paper to remove the insualtion from the copper wire to ensure that t
 
 We used large paperclips to support the core and magnets. A flat peice of wood was used to hold each support in place. Using more copper tape we also constructed the brushes. The brushes are connected so that they are 180 degrees from each other and contact the commutator at all times. This is acheived by making them spring against the sides of the commutator. Shown below is a photo of the completed motor:
 
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/motor.jpg" width="500" height="400" />
 
