@@ -200,8 +200,15 @@ Shown below is the constructed commutator:
 
 We used copper tape wraped around the cork to make electrical connections. The brushes will then be able to     connect to the communtator and switch the direction as the commutator rotates.  
 
+### Wrapping the coils:
+
 We wrapped 155 turns of copper wire onto the cork and soldered the ends to the commutator.  
 I used sand paper to remove the insualtion from the copper wire to ensure that the solder would enable a complete circuit to be made. Shown below is the completed core of the motor:  
 
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Coils.jpg" width="500" height="400" />
+
+### Magnets, brushes and supports:
+
+We used large paperclips to support the core and magnets. A flat peice of wood was used to hold each support in place. Using more copper tape we also constructed the brushes. The brushes are connected so that they are 180 degrees from each other and contact the commutator at all times. This is acheived by making them spring against the sides of the commutator. Shown below is a photo of the completed motor:
+
 
