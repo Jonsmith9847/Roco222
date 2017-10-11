@@ -181,7 +181,7 @@ tts.say("I've hacked you, robot!")
 
 ```
 
-I then used the command python Hacked.py to run the python script and make noa speak.  
+I then used the command python Hacked.py to run the python script and make nao speak.  
 
 ---
 
@@ -192,11 +192,16 @@ to assemble a rudimentary motor.
 
 ### Building the Commutator:
 
-The commutator is a device that is designed to reverse the direction of current flow when the armature is inline   with the magnetic feild.
-This enables the motor to turn a full 360 degrees. Without a commutator the armature will simply move to line up   with the feild and stay in that postion.
+The commutator is a device that is designed to reverse the direction of current flow when the armature is inline   with the magnetic feild.  
+This enables the motor to turn a full 360 degrees. Without a commutator the armature will simply move to line up   with the feild and stay in that postion.  
 
 Shown below is the constructed commutator:  
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Commutator.jpg" width="400" height="500" />
 
-We used copper tape wraped around the cork to make electrical connections. The brushes will then be able to   connect to the communtator and switch the direction as the commutator rotates.  
+We used copper tape wraped around the cork to make electrical connections. The brushes will then be able to     connect to the communtator and switch the direction as the commutator rotates.  
+
+We wrapped 155 turns of copper wire onto the cork and soldered the ends to the commutator.  
+I used sand paper to remove the insualtion from the copper wire to ensure that the solder would enable a complete circuit to be made. Shown below is the completed core of the motor:  
+
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Coils.jpg" width="500" height="400" />
 
