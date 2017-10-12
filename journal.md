@@ -240,7 +240,8 @@ Firstly I collected materials that will be used to construct the new motor desig
 Shown below is the completed stand. I used solidworks to design the part and a 3D printer to manufacture it.  
 The STL files have been made availble on the GitHub repository.  
 
-<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/motor.jpg" width="500" height="400" />
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Stand.jpg" width="400" height="500" />
+
 
 I designed the part so that the 608Z bearings would slot in with a simple press fit so no hardware was required.
 Using nuts and washers the threaded rod was held in alignemnt but allowed to spin freely with little friction.
