@@ -214,7 +214,32 @@ We used large paperclips to support the core and magnets. A flat peice of wood w
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/motor.jpg" width="500" height="400" />
 
 ### Video of testing:
-We tested the motor and after some small adjustments we where able to acheive continuous motion at a reasonable rpm. Click the thumbnail below to open youtube.
+We tested the motor and after some small adjustments we where able to acheive continuous motion at a reasonable   rpm. Click the thumbnail below to open youtube.  
 
 [![DC Motor](http://img.youtube.com/vi/yTVSUlR2SdA/0.jpg)](http://www.youtube.com/watch?v=yTVSUlR2SdA "DC Motor")
+
+Using the video the RPM of the motor can be estimated:  
+RPM = (30 revolutions / 10 seconds of video)*(60 seconds)*(240fps/30fps) = 1440 RPM
+*Calculations need checking*
+
+## Improving the design
+
+The motor built uses a single coil with two magnetic poles. The system is losley put together and not capable of supporting any load. Therfore with the use of availble tools I improoved the design of the DC motor.
+
+### New stands and bearings
+Firstly I collected materials that will be used to construct the new motor design. My parts list includes:
+
+* 2x  608Z bearings
+* 1x  300mm of 8mm threadded rod
+* 50x 8mm washers
+* 50x 8mm nuts
+* PETG Filament for 3D Printing
+* 500g Thinly insulated copper wire
+* Many cups of coffee
+
+
+
+
+
+
 
