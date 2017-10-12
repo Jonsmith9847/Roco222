@@ -229,15 +229,22 @@ The motor built uses a single coil with two magnetic poles. The system is losley
 ### New stands and bearings
 Firstly I collected materials that will be used to construct the new motor design. My parts list includes:
 
-* 2x  608Z bearings
-* 1x  300mm of 8mm threadded rod
-* 50x 8mm washers
-* 50x 8mm nuts
-* PETG Filament for 3D Printing
-* 500g Thinly insulated copper wire
-* Many cups of coffee
+* 2x  608Z bearings  
+* 1x  300mm of 8mm threadded rod  
+* 50x 8mm washers  
+* 50x 8mm nuts  
+* PETG Filament for 3D Printing  
+* 500g Thinly insulated copper wire  
+* Many cups of coffee  
 
+Shown below is the completed stand. I used solidworks to design the part and a 3D printer to manufacture it.  
+The STL files have been made availble on the GitHub repository.  
 
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/motor.jpg" width="500" height="400" />
+
+I designed the part so that the 608Z bearings would slot in with a simple press fit so no hardware was required.
+Using nuts and washers the threaded rod was held in alignemnt but allowed to spin freely with little friction.
+I also added a small amount of PTFE lubricant to the bearings.
 
 
 
