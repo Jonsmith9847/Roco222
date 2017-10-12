@@ -213,3 +213,8 @@ We used large paperclips to support the core and magnets. A flat peice of wood w
 
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/motor.jpg" width="500" height="400" />
 
+### Video of testing:
+We tested the motor and after some small adjustments we where able to acheive continuous motion at a reasonable rpm. Click the thumbnail below to open youtube.
+
+[![DC Motor](http://img.youtube.com/vi/yTVSUlR2SdA/0.jpg)](http://www.youtube.com/watch?v=yTVSUlR2SdA "DC Motor")
+
