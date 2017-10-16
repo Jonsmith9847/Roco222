@@ -257,7 +257,7 @@ We are going to build a rotary encoder to measure the speed of the DC Motor that
 
 The encoder generates a signal as the motor shaft rotates. The frequency of this signal is propartional to the angular velocity of the motor shaft. We will use a rotating disc with slots cut out to block and allow light to pass through. Shown below is a photo of the 3d design for the encoder disc.
 
-**Include photo of disc STL**
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/EncoderDisc.jpg"/>
 
 Circuit diagram
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/EncoderCIrcuit.png" width="500" height="400" />
