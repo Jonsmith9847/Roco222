@@ -247,6 +247,20 @@ I designed the part so that the 608Z bearings would slot in with a simple press 
 Using nuts and washers the threaded rod was held in alignemnt but allowed to spin freely with little friction.
 I also added a small amount of PTFE lubricant to the bearings.
 
+## Building an incremental encoder
+
+What is an encoder and why is it used. Rotary incremental encoder using light.
+
+Circuit diagram
+
+Constuction
+
+Testing
+
+Code
+
+Final Solution/Implementation.
+
 
 
 
