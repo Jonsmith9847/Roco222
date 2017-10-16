@@ -247,11 +247,20 @@ I designed the part so that the 608Z bearings would slot in with a simple press 
 Using nuts and washers the threaded rod was held in alignemnt but allowed to spin freely with little friction.
 I also added a small amount of PTFE lubricant to the bearings.
 
+---
+
 ## Building an incremental encoder
 
 What is an encoder and why is it used. Rotary incremental encoder using light.
 
+We are going to build a rotary encoder to measure the speed of the DC Motor that we have built. Many designs exist for encoders however we are going to buil a light encoder only.
+
+The encoder generates a signal as the motor shaft rotates. The frequency of this signal is propartional to the angular velocity of the motor shaft. We will use a rotating disc with slots cut out to block and allow light to pass through. Shown below is a photo of the 3d design for the encoder disc.
+
+**Include photo of disc STL**
+
 Circuit diagram
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/EncoderCIrcuit.png" width="500" height="400" />
 
 Constuction
 
