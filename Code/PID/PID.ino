@@ -38,12 +38,9 @@ void setup()
 }
 void loop()
 {
-
 //Write speeds
   digitalWrite(M1, M1D);
-  speedSet1 = M1S;
-
-  
+  speedSet1 = M1S;  
   time = micros();
   etime = time - timep;
   if (etime > 200000)

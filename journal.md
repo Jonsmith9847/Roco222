@@ -383,11 +383,12 @@ PID Systems often require tuning to improove their performance. If Kp, Ki and Kd
 
 Many peices of software have been produced to automatically tune PID systems for best results. However in this instance we tuned the system manually to understand the effects our modifications had on the complete system.
 
-
-
-##Final motor design
 Shown below is the final motor design with improoved magnet supports and encoder mounting:
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/FinalMotor.jpg"/>
+
+The motor draws 2amps during operation however is resistant to heating due to the large diameter wire used in the windings. The motor is capable of starting from any position due the narrow gap width between commutator parts. This gap was acheived using 3d printed slots that allowed a knife to precicley cut the commuator at 4 specific locations.
+
+The primary area for improvment of the design would be the brushes. A new brush mount would have been desirable howver the optimal soultion within the given time frame invloved relying on the wire to sping into place. This provided enough pressure to maintain conact with the commuator at high speeds while also preventing excessive wear.
 ---
 
 
@@ -488,11 +489,68 @@ The two commands test the full range of movment for the Pan servo motor for the 
 
 5. Launch robot state publisher and joint state publisher using the following commands
 
-rosrun robot_state_publisher robot_state_publisher
+`rosrun robot_state_publisher robot_state_publisher`
 
-rosrun joint_state_publisher joint_state_publisher _use_gui:
-=true
+`rosrun joint_state_publisher joint_state_publisher _use_gui:=true`
 
-6. Start Rviz. Using the command `rviz` the program can be launched opening in a new window.  
+6. Start Rviz. Using the command `rosrun rviz rviz` the program can be launched opening in a new window.  
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Rviz.png"/>
+
+## URDF: Unified Robot Description Format
+
+Is a method of describing  a robots construction and movement. Most commonly known as kinematics.
+The URDF Format uses basic shapes or STLF files to build the geometry of a robot.
+
+an example URDF is shown below:
+```
+<?xml version="1.0"?>
+<robot name="robot_arm">
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<cylinder length= "0.06" radius= "0.1"/>
+			</geometry>
+		</visual>
+	</link>
+</robot>
+```
+
+The joint states are used to compute the angles of each joint and using forward kinematics the ROS can calculate the position of each arm segment.
+
+The ardunio can then be prgrammed to subscirbe to the joint state data and use it to control the position of each motor.
+
+Example ardunio code using the joint state publisher:
+
+```
+#include <Servo.h>
+#include <ros.h>
+#include <sensor_msgs/JointState.h>
+using namespace ros;
+NodeHandle  nh;
+Servo servo;
+
+void cb(const sensor_msgs ::JointState & msg){
+	int angle = (int) (msg.position[0] * 180/3.14);	
+	servo.write(angle); // Between 0-180
+}
+
+Subscriber<sensor_msgs::JointState>
+sub("joint_states",cb);
+
+void setup(){
+	nh.initNode();
+	nh.subscribe(sub);
+	servo.attach(9); //attach servo to pin 9
+}
+
+void loop(){
+	nh.spinOnce();
+	delay(1);
+}
+```
+
+## Launch Files
+
+Launch files are used to group setup and configuration commands together. Using launch files enables complete ros systems to be intialised quickly by starting all the required assets at the same time.
+
 
