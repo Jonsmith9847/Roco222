@@ -385,6 +385,8 @@ Many peices of software have been produced to automatically tune PID systems for
 
 
 
+##Final motor design
+Shown below is the final motor design with improoved magnet supports and encoder mounting:
 
 ---
 
@@ -400,12 +402,12 @@ The robot arm must be controlled using ROS.
 We are provided with two 9g servos and some cardboard to prototype arm movement.
 Using the materials we assembled a basic arm and tested its operation.
 
-//////////INSERT CARBOARD ARM PHOTO/////////////////
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/CardboardArm.jpg" />
 
 We then moved towards developing a more robust robot arm. Using Solidworks I designed the arm components. Using a 3D Printer we then
 manufactured the parts. Shown below are some of the design files.
 
-/////////////INSERT ROBOT ARM DESIGN PHOTOS///////////
+/////////////INSERT ROBOT ARM DESIGN PHOTOS/////////// 
 
 The parts are designed to use the minimal amount of hardware possible to reduce costs. Furthermore the arms geometry is simple so that it can be
 modeled in ROS at a later date.
@@ -478,16 +480,18 @@ and then
 
 The two commands test the full range of movment for the Pan servo motor for the robot arm.
 
-///////Include screenshot of terminal/////////////////
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Terminal.png"/>
 
-4. Start Rviz. Using the command `rviz` the program can be launched opening in a new window.  
-
-5. Load the URDF File as the robot description. Firstly navigate to the correct location using `ls` and `cd`. Then run the following command osparam
+4. Load the URDF File as the robot description. Firstly navigate to the correct location using `ls` and `cd`. Then run the following command osparam
 `set robot_description -t models/robot-arm.urdf`
 
-6. Launch robot state publisher and joint state publisher using the following commands
+5. Launch robot state publisher and joint state publisher using the following commands
 
 rosrun robot_state_publisher robot_state_publisher
 
 rosrun joint_state_publisher joint_state_publisher _use_gui:
 =true
+
+6. Start Rviz. Using the command `rviz` the program can be launched opening in a new window.  
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Rviz.png"/>
+
