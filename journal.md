@@ -395,38 +395,99 @@ The task requires that we construct a robot arm that has a minimum of two axis o
 
 The robot arm must be controlled using ROS.
 
-### Installing ROS
+###Designing the arm
+
+We are provided with two 9g servos and some cardboard to prototype arm movement.
+Using the materials we assembled a basic arm and tested its operation.
+
+//////////INSERT CARBOARD ARM PHOTO/////////////////
+
+We then moved towards developing a more robust robot arm. Using Solidworks I designed the arm components. Using a 3D Printer we then
+manufactured the parts. Shown below are some of the design files.
+
+/////////////INSERT ROBOT ARM DESIGN PHOTOS///////////
+
+The parts are designed to use the minimal amount of hardware possible to reduce costs. Furthermore the arms geometry is simple so that it can be
+modeled in ROS at a later date.
+
+The arm features 4 degrees of movement:
+-Pan
+-Tilt
+-Elbow Joint
+-End Effector
+
+Using an ardunio microcontroller sample test code was used to test each axis by running through a predefined set of movments.
+Shown below is the completed robot arm once fully assembled
+
+//////////INSERT ROBOT ARM PHOTOS////////////////////
+
+
+### Using ROS to control a robot 
+
+## Installing ROS
 
 I installed a new updated version of Ubuntu to verision 16.04 LTS. This enables me to install ROS Kinetic Kame for use with my robot arm.
+The install process was well documented at http://wiki.ros.org/kinetic/Installation/Ubuntu.
 
-The install process for ROS is as follows:
+## Setting up ROS:
 
-1. Setup the sources list
-```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-```
+1. First I launched ROS using the command `roscore`. This launches all the pre-requisites of a ROS-based system and allows me to introduce new nodes to my system.
 
-2. Setup keys
-```
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-```
+2. Secondly I configured the Ardunio as a ROS Node. To acheive this I programmed the arduino with the following example code. 
 
-3.Update Debian package index
 ```
-sudo apt-get update
+#include <ros.h>
+#include <std_msgs/UInt16.h>
+#include <Servo.h>
+
+using namespace ros;
+
+NodeHandle nh;
+
+Servo servo;
+
+void cb( const std_msgs::UInt16& msg){
+  servo.write(msg.data); //0-180
+}
+
+Subscriber<std_msgs::UInt16> sub("servo", cb);
+
+void setup(){
+  nh.initNode();
+  nh.subscribe(sub);
+  
+  servo.attach(9);//attach pin 9 to servo
+}
+
+void loop(){
+  nh.spinOnce();
+  delay(1);
+}
 ```
+This code allows me to address the Ardunio as a ros node and publish to the rostopic "servo"
 
-4.Install ROS
-```
-sudo apt-get install ros-kinetic-desktop-full
-```
+3. Start and test the new ROS Node.
 
-5. Initialize rosdep
-```
-sudo rosdep init
-rosdep update
-```
+Firstly I started a serial connection to the Ardunio using the following command
+`rosrun rosserial_python serial_node.py /dev/ttyACM0`
 
+Then to test the connection I manually published data to the new node using the command rostopic pub.
+`rostopic pub servo std_msgs/UInt16 180`
+and then
+`rostopic pub servo std_msgs/UInt16 0`
 
+The two commands test the full range of movment for the Pan servo motor for the robot arm.
 
+///////Include screenshot of terminal/////////////////
 
+4. Start Rviz. Using the command `rviz` the program can be launched opening in a new window.  
+
+5. Load the URDF File as the robot description. Firstly navigate to the correct location using `ls` and `cd`. Then run the following command osparam
+`set robot_description -t models/robot-arm.urdf`
+
+6. Launch robot state publisher and joint state publisher using the following commands
+
+rosrun robot_state_publisher robot_state_publisher
+
+rosrun joint_state_publisher joint_state_publisher _use_gui:
+=true
