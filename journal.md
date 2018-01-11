@@ -388,7 +388,8 @@ Shown below is the final motor design with improoved magnet supports and encoder
 
 The motor draws 2amps during operation however is resistant to heating due to the large diameter wire used in the windings. The motor is capable of starting from any position due the narrow gap width between commutator parts. This gap was acheived using 3d printed slots that allowed a knife to precicley cut the commuator at 4 specific locations.
 
-The primary area for improvment of the design would be the brushes. A new brush mount would have been desirable howver the optimal soultion within the given time frame invloved relying on the wire to sping into place. This provided enough pressure to maintain conact with the commuator at high speeds while also preventing excessive wear.
+The primary area for improvment of the design would be the brushes. A new brush mount would have been desirable however the optimal soultion within the given time frame invloved relying on the wire to sping into place. This provided enough pressure to maintain conact with the commutator at high speeds while also preventing excessive wear.
+
 ---
 
 
