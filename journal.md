@@ -257,19 +257,175 @@ We are going to build a rotary encoder to measure the speed of the DC Motor that
 
 The encoder generates a signal as the motor shaft rotates. The frequency of this signal is propartional to the angular velocity of the motor shaft. We will use a rotating disc with slots cut out to block and allow light to pass through. Shown below is a photo of the 3d design for the encoder disc.
 
-<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/EncoderDisc.jpg"/>
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/EncoderDisc.png"/>
 
 Circuit diagram
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/EncoderCIrcuit.png" width="500" height="400" />
 
 Constuction
+I then mounted the encoder wheel onto the drive shaft of my motor using two nuts. The completed encoder wheel had two cutouts to keep everything in balance. Furthermore I used two encoder discs so that the gap width could be varied.
 
 Testing
-
+To test the encoder I programmed the arduino micro-controller so that It could detect the encoder pulses using an interrupt pin. The completed code is shown below. Using the built in serial plotter included with the ardunio software I could visualise the output rpm as voltage and current are increased.
+ 
 Code
+The completed arduino code for the incremental encoder is shown below:
+
+```
+const byte interruptPin = 2;
+volatile byte state = LOW;
+unsigned long count = 0;
+boolean counted = false;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(interruptPin, INPUT);
+  attachInterrupt(digitalPinToInterrupt(interruptPin), blink, CHANGE);
+}
+
+void loop() {
+    delay(1000);
+    count = count*60/4;
+    Serial.println(count);
+    count = 0;
+}
+
+void blink() {count ++;}
+```
+
+The code is relativley straight forward to detect and print the rpm speed. The data can then be used to implement variable speed control using a feedback loop. One more advanced implementation is using PID to control the speed of the motor.
 
 Final Solution/Implementation.
 
+Using the ardunio motor driver we attempted to implement a PID Control system with varying degrees of sucess. We encountered an issue with current draw limiting our abaility to complete this task. The motor driver chips ended up overheating as a result of the larger diameter (lower resistance) wire used to construct the motor. We attempted to solve these issues with the use of stick on heat sinks however heating continued to be an issue.
+
+Regardless of the issues we developed the code to control the motor using a PID loop as shown below:
+
+```
+#include <PID_v1.h>
+double PPS1;
+
+volatile unsigned long count1 = 0;
+
+unsigned long timep, time, etime;
+long currentPPS1 = 0;
+
+long speedSet1;
+
+
+//Motor pins
+int E1 = 3;
+int M1 = 12;
+
+int M1S;
+int M1D = 1;
+int M1last;
+float Kp = 1; //Initial Proportional Gain
+float Ki = 1; //Initial Integral Gain
+float Kd = 1; //Initial Differential Gain
+double Setpoint1, Input1, Output1;
+PID myPID1(&Input1, &Output1, &Setpoint1, Kp, Ki, Kd, DIRECT);
+const int sampleRate = 100;
+void setup()
+{
+  Setpoint1 = 500;
+  
+  attachInterrupt(digitalPinToInterrupt(2), transition1, CHANGE);
+  timep = micros();
+  
+  PPS1 = count1; //Read encoder PPS1
+  Input1 = map(PPS1, 0, 2900, 0, 255);
+  Setpoint1 = map(Setpoint1, 0, 2900, 0, 255);
+  myPID1.SetMode(AUTOMATIC);
+  myPID1.SetSampleTime(sampleRate);
+  
+}
+void loop()
+{
+//Write speeds
+  digitalWrite(M1, M1D);
+  speedSet1 = M1S;  
+  time = micros();
+  etime = time - timep;
+  if (etime > 200000)
+  {
+    currentPPS1 = (count1);
+    count1 = 0;
+    timep = time;
+  }
+  PPS1 = currentPPS1;
+  Input1 = map(PPS1, 0, 580, 0, 255);
+  myPID1.Compute();
+  analogWrite(E1, Output1);
+}
+
+void transition1(){
+count1++;
+}
+
+```
+## PID Control
+
+PID Control is a type of control loop often used to control systems where the response is not instantanous. PID has benefits and disadvantages that make it both suitable and unsitable for different applications.
+
+PID is used primarly to change and control the rate at which a system reacts to changes of input.
+
+The feedback loop uses three components to calculate its response, P, Proportion, I, Intergral and D DIfferential hence why it is called a PID loop. 
+
+The Propotional feedback is quite simply the error multipled by a value called Kp. The error is allways directly propartional to the error value.
+
+The Intergral feedback is proportional to the time an error has existed for. This is useful when motors stall before they move to their desired final position. The intergral feedback is multipled by a value called Ki
+
+The Differential feedback is proprtional to the rate of change of error. If the error is changing rapidly the system can respond with a strong force to resist and slow the rate of change. This value is multiplied by a value called Kd. 
+
+Kp, Ki, Kd and PID tuning.
+PID Systems often require tuning to improove their performance. If Kp, Ki and Kd are set incorrectly the systems can oscilliate out of control or react slowly and to error. It is important that Kp, Ki and Kd are set correctly for the type of system being used. Some tuning profiles will be designed to prevent overshoot while others prioritise speed over accuracy and allow oscillations/hunting for a short period of time.
+
+Many peices of software have been produced to automatically tune PID systems for best results. However in this instance we tuned the system manually to understand the effects our modifications had on the complete system.
+
+
+
+
+---
+
+
+##Building a robot arm
+
+The task requires that we construct a robot arm that has a minimum of two axis of movement. I aim to use 4 servo motors to build a robot arm with four axis of movement. 
+
+The robot arm must be controlled using ROS.
+
+### Installing ROS
+
+I installed a new updated version of Ubuntu to verision 16.04 LTS. This enables me to install ROS Kinetic Kame for use with my robot arm.
+
+The install process for ROS is as follows:
+
+1. Setup the sources list
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+
+2. Setup keys
+```
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+```
+
+3.Update Debian package index
+```
+sudo apt-get update
+```
+
+4.Install ROS
+```
+sudo apt-get install ros-kinetic-desktop-full
+```
+
+5. Initialize rosdep
+```
+sudo rosdep init
+rosdep update
+```
 
 
 
