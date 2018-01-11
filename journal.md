@@ -387,7 +387,7 @@ Many peices of software have been produced to automatically tune PID systems for
 
 ##Final motor design
 Shown below is the final motor design with improoved magnet supports and encoder mounting:
-
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/FinalMotor.jpg"/>
 ---
 
 
@@ -405,9 +405,11 @@ Using the materials we assembled a basic arm and tested its operation.
 <img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/CardboardArm.jpg" />
 
 We then moved towards developing a more robust robot arm. Using Solidworks I designed the arm components. Using a 3D Printer we then
-manufactured the parts. Shown below are some of the design files.
+manufactured the parts. Shown below are some of the design files. 
 
-/////////////INSERT ROBOT ARM DESIGN PHOTOS/////////// 
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Arm.png"/>
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Base1.png"/>
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/Base2.png"/>
 
 The parts are designed to use the minimal amount of hardware possible to reduce costs. Furthermore the arms geometry is simple so that it can be
 modeled in ROS at a later date.
@@ -421,8 +423,7 @@ The arm features 4 degrees of movement:
 Using an ardunio microcontroller sample test code was used to test each axis by running through a predefined set of movments.
 Shown below is the completed robot arm once fully assembled
 
-//////////INSERT ROBOT ARM PHOTOS////////////////////
-
+<img src="https://github.com/Jonsmith9847/roco222/blob/master/photos/RobotArm.jpg"/>
 
 ### Using ROS to control a robot 
 
